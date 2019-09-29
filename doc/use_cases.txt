@@ -1,0 +1,13 @@
+[Jogador]-(Escolher Nick),
+[Jogador]-(Ver Ranking),
+[Jogador]-(Escolher Jogo),
+[Jogador]-(Trocar Pontos),
+[Jogador]-(Comprar Itens),
+(Ver Ranking)<(Ver Ranking do Geral),
+(Ver Ranking)<(Ver Ranking do Desafio),
+(Ver Ranking)<(Ver Ranking do Jogo),
+(Ver Ranking)<(Ver Ranking de Leveis),
+(Escolher Jogo)>(Escolher Desafio),
+(Escolher Jogo)>(Ver Ranking do Jogo),
+(Escolher Desafio)>(Responder Desafio),
+(Escolher Desafio)>(Ver Ranking do desafio)

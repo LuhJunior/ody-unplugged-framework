@@ -1,0 +1,1 @@
+g++ src/main.cpp src/Interface/Console.cpp src/Modelo/Menu.cpp

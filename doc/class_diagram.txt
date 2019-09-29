@@ -1,0 +1,38 @@
+[Console| |+ show(menssage: string) : void;+ getUserEntry() : string],
+[Console]-[Menu||- displayMenu() : void; - getOption() : int],
+[Menu]->[Game|- nome : string;| - displayChallenges() : void; - getChoosenChallenge() : int],
+[Game]++-1...n>[Desafio| - número : int; - nível: int|- displayChallenge() : void; - getUserResponse() : string; - computateResponse() : Pontuação; - displayResults() : void],
+[Desafio]->[Pontuação|- pontos: int; - experiencia: int;],
+[Game]-[DataStore|| + storeUserChallengeScore(player: PlayerInfo; pontuação: Pontuação; desafio: Desafio ) : boolean; + storeUserScore(player : PlayerInfo) : boolean; + retrieveUserScore() : PlayerInfo; + retrievePlayerChallengeScore(player : PlayerInfo) : Pontuação],
+[DataStore]->[FileControl| - fileName : string; - size : int| - getDataBlock() : char *; - setDataBlock(char * data)]
+[Menu]++-3>[Ranking| + nickName: ArrayList : string| + displayRaking() : void],
+[Ranking]^-[ChallengeRanking| challengeName : string],
+[Ranking]^-[GameRanking| gameName : string],
+[Ranking]^-[GeneralRanking],
+[Menu]->[PlayerInfo| - nick : string ; - level : int ; - pontosExperiencia : int; - pontos : int| + levelUp() : void],
+[Menu]->[Loja|| - displayItems() : void; - buyItem(PlayInfo)],
+[Loja]++-1...n>[Items| - nome : sting; - preço : int]
+[Menu]->[Gameficação]
+[Gameficação]++-10...n>[LevelConfig|- level : int; - nextLevelExp : int]
+[Gameficação]++-10...n>[OpçõesExtras| - descrição : string; - nível : int]
+
+
+--- Versão Padrões de Projeto ---
+
+[Console| |+ show(menssage: string) : void;+ getUserEntry() : string], [Console]-[Menu||- displayMenu() : void; + getOption() : int],
+[Menu]->[Facade|| - displayItems() : void; + buyItem(PlayInfo) : boolean; + levelUp() : void;displayChallenges() : void; + displayRaking() : void; + getChoosenChallenge() : int; + displayGame() : void],
+[Facade]++-1...n>[Game|- nome : string;| - displayChallenges() : void; - getChoosenChallenge() : int; + getInstance : Game],
+[Game]->[Game]; + displayGame() : void,
+[Game]++-1...n>[Desafio| - número : int; - nível: int|- displayChallenge() : void; - getUserResponse() : string; - computateResponse() : Pontuação; - displayResults() : void],
+[Desafio]->[Pontuação|- pontos: int; - experiencia: int;],
+[Game]-[DataStore|| + storeUserChallengeScore(player: PlayerInfo; pontuação: Pontuação; desafio: Desafio ) : boolean; + storeUserScore(player : PlayerInfo) : boolean; + retrieveUserScore() : PlayerInfo; + retrievePlayerChallengeScore(player : PlayerInfo) : Pontuação],
+[DataStore]->[FileControl| - fileName : string; - size : int| - getDataBlock() : char *; - setDataBlock(char * data)],
+[Facade]++-3>[Ranking| + nickName: ArrayList : string| + displayRaking() : void],
+[Ranking]^-[ChallengeRanking| challengeName : string],
+[Ranking]^-[GameRanking| gameName : string],
+[Ranking]^-[GeneralRanking],
+[Facade]->[PlayerInfo| - nick : string ; - level : int ; - pontosExperiencia : int; - pontos : int| + levelUp() : void],
+[Facade]->[Loja|| - displayItems() : void; - buyItem(PlayInfo)], [Loja]++-1...n>[Items| - nome : string; - preço : int],
+[Facade]->[Gameficação],
+[Gameficação]++-10...n>[LevelConfig|- level : int; - nextLevelExp : int],
+[Gameficação]++-10...n>[OpçõesExtras| - descrição : string; - nível : int]
