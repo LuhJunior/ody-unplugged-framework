@@ -1,9 +1,9 @@
 #include "LevelConfig.hpp"
 
 int LevelConfig::getLevel() {
-  return this->getLevel;
+  return this->level;
 }
 
 int LevelConfig::getNextLevelExp() {
-  return this->getNextLevelExp;
+  return this->nextLevelExp;
 }

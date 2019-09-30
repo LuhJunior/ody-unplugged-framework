@@ -2,7 +2,7 @@
 #include "Modelo/Menu.hpp"
 
 int main() {
-  Menu::getUserInfo();
-  Menu::displayMenu();
+  Menu menu;
+  menu.init();
   return 0;
 }

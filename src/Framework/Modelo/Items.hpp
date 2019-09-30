@@ -1,3 +1,6 @@
+#ifndef ITEMS_H
+#define ITEMS_H
+
 #include <string>
 using namespace std;
 
@@ -24,3 +27,5 @@ private:
   string nome;
   int preco;
 };
+
+#endif // ITEMS_H

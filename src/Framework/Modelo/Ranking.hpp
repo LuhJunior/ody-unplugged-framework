@@ -1,3 +1,6 @@
+#ifndef RANKING_H
+#define RANKING_H
+
 #include <string>
 #include <vector>
 
@@ -33,3 +36,5 @@ public:
 
   string challengeName;
 };
+
+#endif // RANKING_H

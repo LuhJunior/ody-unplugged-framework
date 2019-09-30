@@ -53,6 +53,37 @@ void PlayerInfo::descontar(int valor) {
   this->moedas -= valor; 
 }
 
-void PlayerInfo::levelUp() {
-  this->level ++; 
+void PlayerInfo::levelUp(int restExp) {
+  this->level ++;
+  this->pontosExperiencia = restExp;
+}
+
+void PlayerInfo::addExperiencia(int exp) {
+  this->pontosExperiencia += exp;
+}
+
+void PlayerInfo::addPontos(int pts) {
+  this->pontos += pts;
+}
+
+bool PlayerInfo::loadPlayer() {
+  if (this->nickname == "Candido") {
+    // mockdata for now
+    this->level = 20;
+    this->pontos = 9999;
+    this->moedas = 999999;
+    this->pontosExperiencia = 999999999;
+    return true;
+  }
+  return false;
+}
+
+string PlayerInfo::display() {
+  return (
+    "Nikname: " + nickname + "\n" +
+    "Level: " + to_string(level) + "\n" +
+    "Pontos de Experiencia: " + to_string(pontosExperiencia) + "\n" +
+    "Pontos: " + to_string(pontos) + "\n" +
+    "Moedas: " + to_string(moedas) + "\n"
+  );
 }

@@ -1,3 +1,6 @@
+#ifndef LEVEL_CONFIG_H
+#define LEVEL_CONFIG_H
+
 class LevelConfig {
 public:
 
@@ -14,3 +17,5 @@ private:
   int level;
   int nextLevelExp;
 };
+
+#endif // LEVEL_CONFIG_H

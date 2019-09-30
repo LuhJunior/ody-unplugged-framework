@@ -1,3 +1,6 @@
+#ifndef OPCOES_EXTRAS_H
+#define OPCOES_EXTRAS_H
+
 #include <string>
 
 using namespace std;
@@ -11,3 +14,5 @@ public:
   string descricao;
   int nivel;
 };
+
+#endif // OPCOES_EXTRAS_H

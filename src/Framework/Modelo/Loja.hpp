@@ -1,3 +1,6 @@
+#ifndef LOJA_H
+#define LOJA_H
+
 #include <vector>
 #include "Items.hpp"
 #include "PlayerInfo.hpp"
@@ -12,6 +15,9 @@ public:
 
   string displayItems();
   bool buyItem(PlayerInfo, string);
+  bool loadShopItems();
 private:
   vector<Items> shopItems;
 };
+
+#endif // LOJA_H

@@ -1,3 +1,6 @@
+#ifndef DESAFIO_H
+#define DESAFIO_H
+
 #include <string>
 #include "Pontuacao.hpp"
 
@@ -5,20 +8,23 @@ using namespace std;
 
 class Desafio {
 public:
-  Desafio(int nivel, int numero) {}
+  Desafio() {}
 
   Desafio(int nivel, int numero) {
     this->nivel = nivel;
     this->numero = numero;
+    this->pontuacao = Pontuacao(numero * 100, nivel * 100);
   }
 
-  string displayChallenge();
-  string displayResults();
-  string getUserResponse();
-  Pontuacao computateResponse();
+  string display();
   int getNivel();
   int getNumero();
+  Pontuacao getPontuacao();
+
 private:
 
   int nivel, numero;
+  Pontuacao pontuacao;
 };
+
+#endif // DESAFIO_H
