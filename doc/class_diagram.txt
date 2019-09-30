@@ -22,7 +22,6 @@
 [Console| |+ show(menssage: string) : void;+ getUserEntry() : string], [Console]-[Menu||- displayMenu() : void; + getOption() : int],
 [Menu]->[Facade|| - displayItems() : void; + buyItem(PlayInfo) : boolean; + levelUp() : void;displayChallenges() : void; + displayRaking() : void; + getChoosenChallenge() : int; + displayGame() : void],
 [Facade]++-1...n>[Game|- nome : string;| - displayChallenges() : void; - getChoosenChallenge() : int; + getInstance : Game],
-[Game]->[Game]; + displayGame() : void,
 [Game]++-1...n>[Desafio| - número : int; - nível: int|- displayChallenge() : void; - getUserResponse() : string; - computateResponse() : Pontuação; - displayResults() : void],
 [Desafio]->[Pontuação|- pontos: int; - experiencia: int;],
 [Game]-[DataStore|| + storeUserChallengeScore(player: PlayerInfo; pontuação: Pontuação; desafio: Desafio ) : boolean; + storeUserScore(player : PlayerInfo) : boolean; + retrieveUserScore() : PlayerInfo; + retrievePlayerChallengeScore(player : PlayerInfo) : Pontuação],
@@ -33,6 +32,7 @@
 [Ranking]^-[GeneralRanking],
 [Facade]->[PlayerInfo| - nick : string ; - level : int ; - pontosExperiencia : int; - pontos : int| + levelUp() : void],
 [Facade]->[Loja|| - displayItems() : void; - buyItem(PlayInfo)], [Loja]++-1...n>[Items| - nome : string; - preço : int],
-[Facade]->[Gameficação],
-[Gameficação]++-10...n>[LevelConfig|- level : int; - nextLevelExp : int],
-[Gameficação]++-10...n>[OpçõesExtras| - descrição : string; - nível : int]
+[Facade]->[Gamificação],
+[Gamificação]->[Gamificação| + getInstace() : Gamificação],
+[Gamificação]++-10...n>[LevelConfig|- level : int; - nextLevelExp : int],
+[Gamificação]++-10...n>[OpçõesExtras| - descrição : string; - nível : int]

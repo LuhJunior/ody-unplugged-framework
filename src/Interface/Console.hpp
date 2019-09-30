@@ -10,8 +10,8 @@ class Console {
 public:
   Console () {}
 
-  virtual void display(string) = 0;
-  virtual string entry() = 0;
+  void display(string);
+  string entry();
 };
 
 #endif // CONSOLE_H
